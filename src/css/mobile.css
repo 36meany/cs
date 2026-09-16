@@ -1,0 +1,135 @@
+@media (max-width: 1024px) {
+  .nav {
+    display: none;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .topbar {
+    padding: 0 12px;
+    height: 56px;
+  }
+
+  .logo {
+    font-size: 15px;
+    letter-spacing: 1px;
+  }
+
+  .logo-mark {
+    width: 24px;
+    height: 24px;
+    font-size: 12px;
+  }
+
+  .content {
+    padding: 16px 12px 60px;
+  }
+
+  h1 {
+    font-size: 24px;
+    margin-bottom: 16px;
+  }
+
+  h2 {
+    font-size: 18px;
+    margin-bottom: 14px;
+  }
+
+  .grid-2 {
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  }
+
+  .grid-3 {
+    grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+  }
+
+  .grid-4 {
+    grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .topbar {
+    height: 50px;
+    gap: 8px;
+    padding: 0 8px;
+  }
+
+  .topbar-left {
+    gap: 8px;
+  }
+
+  .logo {
+    font-size: 13px;
+    gap: 6px;
+  }
+
+  .logo-mark {
+    width: 22px;
+    height: 22px;
+    font-size: 11px;
+  }
+
+  .balance-box {
+    font-size: 12px;
+    padding: 6px 10px;
+  }
+
+  .btn-small {
+    width: 36px;
+    height: 36px;
+    padding: 0;
+  }
+
+  .topbar-right {
+    gap: 8px;
+  }
+
+  .content {
+    padding: 12px 8px 50px;
+  }
+
+  h1 {
+    font-size: 20px;
+    margin-bottom: 12px;
+  }
+
+  h2 {
+    font-size: 15px;
+    margin-bottom: 10px;
+    gap: 8px;
+  }
+
+  .grid {
+    gap: 10px;
+  }
+
+  .grid-2 {
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  }
+
+  .grid-3 {
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  }
+
+  .grid-4 {
+    grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+  }
+
+  .btn {
+    padding: 10px 14px;
+    font-size: 11px;
+  }
+
+  .btn-small {
+    padding: 0;
+    border-radius: 4px;
+  }
+
+  .flex {
+    flex-direction: column;
+    gap: 8px;
+  }
+}
