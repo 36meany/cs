@@ -1,0 +1,10 @@
+const renderUpgradeView = () => {
+  const selected = gameState.inventory.find(i => i.id === window.upgradeFrom);
+  const targets = selected ? upgradeManager.getUpgradeTargets(selected, 24) : [];
+  return `<section class="page-head"><div><span class="eyebrow">RISK / REWARD</span><h1>Апгрейд</h1><p class="text-muted">Рискни предметом и попробуй получить более дорогой дроп.</p></div></section><div class="upgrade-layout"><div class="upgrade-slot">${selected ? skinCard(selected) : '<div class="empty-state">Выбери предмет ниже</div>'}</div><div class="upgrade-center"><div class="upgrade-chance">${selected && window.upgradeTarget ? (upgradeManager.calculateChance(economy.getItemValue(selected), window.upgradeTarget.price) * 100).toFixed(1) : '0.0'}%</div><span class="text-muted">ШАНС УСПЕХА</span><button class="btn btn-primary" id="runUpgradeBtn" ${selected && window.upgradeTarget ? '' : 'disabled'}>Испытать удачу</button></div><div class="upgrade-slot">${window.upgradeTarget ? skinCard(window.upgradeTarget) : '<div class="empty-state">Выбери цель справа</div>'}</div></div><div class="upgrade-panels"><div><h2>Мои предметы</h2><div class="skin-grid compact">${gameState.inventory.map(i => `<div data-upgrade-from="${i.id}">${skinCard(i)}</div>`).join('')}</div></div><div><h2>Цели</h2><div class="skin-grid compact">${targets.map(i => `<div data-upgrade-target='${esc(JSON.stringify(i))}'>${skinCard(i)}</div>`).join('')}</div></div></div>`;
+};
+const bindUpgradeView = () => {
+  $$('[data-upgrade-from]').forEach(el => el.onclick = () => { window.upgradeFrom = Number(el.dataset.upgradeFrom); window.upgradeTarget = null; renderApp(); });
+  $$('[data-upgrade-target]').forEach(el => el.onclick = () => { window.upgradeTarget = JSON.parse(el.dataset.upgradeTarget); renderApp(); });
+  $('#runUpgradeBtn')?.addEventListener('click', () => { const from = gameState.inventory.find(i => i.id === window.upgradeFrom); const result = upgradeManager.executeUpgrade(from, window.upgradeTarget); if (result.success) showDropModal(result.item, { name: 'Апгрейд' }); window.upgradeFrom = null; window.upgradeTarget = null; renderApp(); });
+};
