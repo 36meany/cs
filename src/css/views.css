@@ -1,2 +1,2 @@
-/* премиальный слой v2 подключается после базовых стилей */
+/* fallback import point retained for deployments that use views.css */
 @import url('./premium.css');

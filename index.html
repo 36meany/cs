@@ -1,101 +1,26 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <title>КЕЙСЕР — Симулятор Кейсов CS2</title>
-  <script src="https://yandex.ru/games/sdk/v2"></script>
-  <link rel="stylesheet" href="src/css/main.css">
-  <link rel="stylesheet" href="src/css/mobile.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<meta name="theme-color" content="#080d14">
+<title>КЕЙСЕР — CS2 Case Simulator</title>
+<script src="https://yandex.ru/games/sdk/v2"></script>
+<link rel="stylesheet" href="src/css/main.css">
+<link rel="stylesheet" href="src/css/mobile.css">
+<link rel="stylesheet" href="src/css/views.css">
 </head>
 <body>
-  <!-- Фоновые слои -->
-  <div class="bg-layer"></div>
-  <div class="bg-overlay"></div>
-
-  <!-- Основное приложение -->
-  <div id="app">
-    <!-- Топ-бар с профилем и навигацией -->
-    <header class="topbar">
-      <div class="topbar-left">
-        <button class="menu-toggle" id="menuToggle">☰</button>
-        <div class="logo">
-          <div class="logo-mark">◈</div>
-          <span>КЕЙСЕР</span>
-        </div>
-      </div>
-
-      <nav class="nav" id="nav">
-        <button data-view="cases" class="nav-btn active">Кейсы</button>
-        <button data-view="inventory" class="nav-btn">Инвентарь</button>
-        <button data-view="upgrade" class="nav-btn">Апгрейд</button>
-        <button data-view="stats" class="nav-btn">Статистика</button>
-        <button data-view="profile" class="nav-btn">Профиль</button>
-      </nav>
-
-      <div class="topbar-right">
-        <div class="balance-box">
-          <span class="coin-icon">◆</span>
-          <span id="balance">500</span>
-        </div>
-        <button class="btn-small btn-primary" id="buyCoinsBtn">+</button>
-      </div>
-    </header>
-
-    <!-- Боковое меню (мобильное) -->
-    <div class="mobile-menu" id="mobileMenu">
-      <div class="mobile-menu-content">
-        <button class="mobile-menu-close" id="menuClose">✕</button>
-        <div class="mobile-menu-header">
-          <div class="player-avatar" id="avatarMobile"></div>
-          <div class="player-info">
-            <div class="player-name" id="playerNameMobile">Игрок</div>
-            <div class="player-level" id="playerLevelMobile">Уровень 1</div>
-          </div>
-        </div>
-        <nav class="mobile-menu-nav">
-          <button data-view="cases" class="mobile-menu-btn">Кейсы</button>
-          <button data-view="inventory" class="mobile-menu-btn">Инвентарь</button>
-          <button data-view="upgrade" class="mobile-menu-btn">Апгрейд</button>
-          <button data-view="stats" class="mobile-menu-btn">Статистика</button>
-          <button data-view="profile" class="mobile-menu-btn">Профиль</button>
-          <button data-view="settings" class="mobile-menu-btn">Настройки</button>
-        </nav>
-      </div>
-    </div>
-
-    <!-- Основной контент -->
-    <main class="content" id="content"></main>
-  </div>
-
-  <!-- Модальные окна и уведомления -->
-  <div id="modalRoot"></div>
-  <div id="toasts"></div>
-  <div id="particles"></div>
-
-  <!-- Скрипты -->
-  <script src="src/js/config.js"></script>
-  <script src="src/js/state.js"></script>
-  <script src="src/js/utils.js"></script>
-  <script src="src/js/audio.js"></script>
-  <script src="src/js/storage.js"></script>
-  <script src="src/js/sdk.js"></script>
-  <script src="src/js/ui/particles.js"></script>
-  <script src="src/js/ui/animations.js"></script>
-  <script src="src/js/ui/toasts.js"></script>
-  <script src="src/js/ui/modals.js"></script>
-  <script src="src/js/game/economy.js"></script>
-  <script src="src/js/game/cases.js"></script>
-  <script src="src/js/game/inventory.js"></script>
-  <script src="src/js/game/upgrade.js"></script>
-  <script src="src/js/game/achievements.js"></script>
-  <script src="src/js/views/cases.js"></script>
-  <script src="src/js/views/inventory.js"></script>
-  <script src="src/js/views/upgrade.js"></script>
-  <script src="src/js/views/stats.js"></script>
-  <script src="src/js/views/profile.js"></script>
-  <script src="src/js/app.js"></script>
-</body>
-</html>
+<div class="bg-layer"></div><div class="bg-overlay"></div>
+<div id="app">
+<header class="topbar">
+<div class="topbar-left"><button class="menu-toggle" id="menuToggle">☰</button><div class="logo"><div class="logo-mark">◈</div><span>КЕЙСЕР</span></div></div>
+<nav class="nav" id="nav"><button data-view="cases" class="nav-btn active">Кейсы</button><button data-view="inventory" class="nav-btn">Инвентарь</button><button data-view="upgrade" class="nav-btn">Апгрейд</button><button data-view="stats" class="nav-btn">Статистика</button><button data-view="profile" class="nav-btn">Профиль</button></nav>
+<div class="topbar-right"><div class="balance-box"><span class="coin-icon">₽</span><span id="balance">500</span></div><button class="btn-small btn-primary" id="buyCoinsBtn">+</button></div>
+</header>
+<div class="mobile-menu" id="mobileMenu"><div class="mobile-menu-content"><button class="mobile-menu-close" id="menuClose">✕</button><div class="mobile-menu-header"><div class="player-avatar" id="avatarMobile">◈</div><div class="player-info"><div class="player-name" id="playerNameMobile">Игрок</div><div class="player-level" id="playerLevelMobile">Уровень 1</div></div></div><nav class="mobile-menu-nav"><button data-view="cases" class="mobile-menu-btn">Кейсы</button><button data-view="inventory" class="mobile-menu-btn">Инвентарь</button><button data-view="upgrade" class="mobile-menu-btn">Апгрейд</button><button data-view="stats" class="mobile-menu-btn">Статистика</button><button data-view="profile" class="mobile-menu-btn">Профиль</button></nav></div></div>
+<main class="content" id="content"></main>
+</div>
+<div id="modalRoot"></div><div id="toasts"></div><div id="particles"></div>
+<script src="src/js/config.js"></script><script src="src/js/state.js"></script><script src="src/js/utils.js"></script><script src="src/js/audio.js"></script><script src="src/js/storage.js"></script><script src="src/js/sdk.js"></script><script src="src/js/ui/particles.js"></script><script src="src/js/ui/animations.js"></script><script src="src/js/ui/toasts.js"></script><script src="src/js/ui/modals.js"></script><script src="src/js/game/economy.js"></script><script src="src/js/game/cases.js"></script><script src="src/js/game/inventory.js"></script><script src="src/js/game/upgrade.js"></script><script src="src/js/game/achievements.js"></script><script src="src/js/views/cases.js"></script><script src="src/js/views/inventory.js"></script><script src="src/js/views/upgrade.js"></script><script src="src/js/views/stats.js"></script><script src="src/js/views/profile.js"></script><script src="src/js/app.js"></script>
+</body></html>
